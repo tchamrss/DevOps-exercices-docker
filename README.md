@@ -40,13 +40,13 @@ docker run --name phpmyadmin \
 ## **EXERCISE 3: Use docker-compose for Mysql and Phpmyadmin**
 
 Create a docker-compose file with both containers --> yaml-file
-stop and remove old Container
+- stop and remove old Container
 docker stop mysql-exercise
 docker stop phpmyadmin
 
 docker rm mysql-exercise
 docker rm phpmyadmin
-Test that everything works again: docker compose up -d
+- Test that everything works again: docker compose up -d
 
 ## **EXERCISE 4: Dockerize your Java Application**
 
@@ -56,9 +56,9 @@ And since your DB and DB UI are running as docker containers,
 you want to make your app also run as a docker container. 
 So you can all start them using 1 docker-compose file on the server. So you do the following:
 
-Create a Dockerfile for your java application... after dockerfile is created:
-build the application: gradle build
-build the docker image: docker build -t docker-exercises-app .
+- Create a Dockerfile for your java application... after dockerfile is created:
+- build the application: gradle build
+- build the docker image: docker build -t docker-exercises-app .
 
 check the name of the application network: docker network ls --> docker-exercises_default
 
@@ -103,17 +103,17 @@ or by nano /var/snap/docker/3613/config/daemon.json add
 Build the image locally and push to this repository
 11. gradle build
 12. docker build -t java-app:1.0 .
-11. push: docker push 1##.9#.2##.##:8082/java-app:1.0
+13. push: docker push 1##.9#.2##.##:8082/java-app:1.0
 
 ## **EXERCISE 6: Add application to docker-compose**
 
 ![img_2.png](img_2.png)
-on local computer
+_on local computer_
 gradle build
 docker build --platform linux/amd64 -t java-app:1.0 .
 docker tag java-app:1.0 164.92.241.36:8082/java-app:1.0
 docker push 1##.9#.2##.##:8082/java-app:1.0
-on digital ocean:
+_on digital ocean_:
 nano /var/snap/docker/3613/config/daemon.json
 snap restart docker
 docker pull 1##.9#.2##.##:8082/java-app:1.0
