@@ -65,8 +65,8 @@ check the name of the application network: docker network ls --> docker-exercise
 run the docker image of the application in the container:
 docker run --name java-app \
 --network docker-exercises_default \
--e DB_USER=appuser \
--e DB_PWD=apppassword \
+-e DB_USER=xxx \
+-e DB_PWD=xxx \
 -e DB_SERVER=mysql \
 -e DB_NAME=appdb \
 -p 8080:8080 \
